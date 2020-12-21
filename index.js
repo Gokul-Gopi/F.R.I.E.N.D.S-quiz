@@ -80,7 +80,7 @@ var highScores = [
   },
   {
     score:4,
-    name:'Rahul'
+    name:'Rahul' 
   }
 ]
 
@@ -88,11 +88,27 @@ for(let i=0;i<5;i++){
   quizGame(qNa[i].question,qNa[i].answer);
 }
 
+checkHighScore(score);
 
-console.log('YOUR SCORED  ' + score);
-console.log(chalk.hex('#fad400')(`Following are the Previous highScores.If you've beaten thenm send as screenshot with your score.
-${highScores[0].name}:${highScores[0].score}
-${highScores[1].name}:${highScores[1].score}`));
+
+
+
+
+function checkHighScore(input){
+
+  if(highScores[0].score < input ||
+
+  highScores[1].score < input ){
+     console.log('YOU SCORED  ' + score);
+     
+    console.log(chalk.hex('#fad400')(`It looks like you've beaten a previous high score, CONGRATULATION! Do send us a screenshot of your score. following were the previous highScores.
+    ${highScores[0].name}:${highScores[0].score}
+    ${highScores[1].name}:${highScores[1].score}`));
+  }
+  else{
+    console.log('YOU SCORED  ' + score);
+  }
+}
 
 
 
